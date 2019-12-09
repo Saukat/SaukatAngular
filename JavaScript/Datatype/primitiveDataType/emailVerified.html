@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+     <script>
+        function emailVerify(){
+            var email=document.getElementById("txtEmail").value;
+           // document.write(email); 
+            var message=document.getElementById("msg");
+            var atpos=email.indexOf("@");
+           // console.log(atpos);
+            //var =email.indexOf("@")
+            var dotpos=email.lastIndexOf(".");
+
+            if(atpos<2 && (dotpos.atpos)){
+                msg.innerHTML="Invalid email";
+            }else{
+                msg.innerHTML="Valid Email";
+            }
+            
+        }
+        
+     </script>
+   </head>
+<body>
+  
+    <div class="container">
+        <div>
+           <input type="text" id="txtEmail" class="form-control">
+        </div>
+        <div>
+           <input type="button" onclick="emailVerify()" value="ok"> 
+        </div>
+        <div id="msg" class="text-success">
+
+        </div>
+    </div>
+
+</body>
+</html>

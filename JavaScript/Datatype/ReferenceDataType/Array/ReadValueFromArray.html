@@ -1,0 +1,17 @@
+<script>
+    function f1(){
+        var products=["TV","Mobile","Shoe"];
+        var price=[15000,18000,20000];
+         
+         document.write("ToString="+products.toString()+"<br>");//ToString=TV,Mobile,Shoe
+         document.write("join="+products.join("<br>"));
+         document.write("slice="+products.slice(2)+"<br>")
+
+         document.write("find="+price.find((price)=>{
+             return price>15000
+         }));"<br>"
+         document.write("Filter="+price.filter((price)=>{
+             return price>15000
+         }));
+    }f1();
+</script>

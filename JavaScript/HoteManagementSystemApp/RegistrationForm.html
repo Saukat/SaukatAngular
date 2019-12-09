@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+     <script>
+         function OrderClick(){
+             document.getElementById("frmReg").style.display="none";
+             document.getElementById("frmDetails").style.display="block";
+       
+       var cName=document.getElementById("txtName").value;
+       document.getElementById("tblName").innerHTML=cName;
+
+       var cDate=document.getElementById("txtDate").value;
+       document.getElementById("tblDate").innerHTML=cDate;
+
+       var totalDays=document.getElementById("txtDays").value;
+       document.getElementById("tblDays").innerHTML=totalDays;
+
+       var totalPerson=document.getElementById("txtPersons").value;
+       document.getElementById("tblPersons").innerHTML=totalPerson;
+       
+       var roomType;
+       var aniType="";
+       var aminitiesCost;
+       var roomAmount;
+       var discount;
+
+       var deluxType=document.getElementById("optDelux");
+
+       var SuiteType=document.getElementById("optSuite");
+
+       var locker=document.getElementById("optLocker");
+
+       var ac=document.getElementById("optac");
+       var pAdv=document.getElementById("txtAdvance").value;
+       var persons = document.getElementById("txtPersons").value;
+       console.log(persons)
+
+      // document.getElementById("tblAdv").innerHTML=pAdv;
+
+
+           if(optDelux.checked) {
+             roomType=optDelux.value;
+             roomCost=2000;
+            }
+            if(optSuite.checked) {
+                roomType=optSuite.value;
+                roomCost=4400;
+            }
+
+            if(optLocker.checked) {
+                aniType+=optLocker.value + "<br>";
+                aminitiesCost=500;
+                roomCost=roomCost + aminitiesCost;
+                  discount=roomCost-pAdv;
+            }
+            if(optac.checked) {
+                aniType+=optac.value + "<br>";
+                aminitiesCost=1000;
+                roomCost=roomCost + aminitiesCost;
+                discount=roomCost-pAdv;
+
+            }
+        document.getElementById("tblAdv").innerHTML=pAdv;
+        document.getElementById("tblDeluxSuite").innerHTML=roomType;
+        document.getElementById("tbllockerAndac").innerHTML=aniType;
+        document.getElementById("totalAmount").innerHTML=roomCost;
+        document.getElementById("totalBalance").innerHTML=discount;
+     
+         }
+     function CloseClick(){
+         document.getElementById("frmReg").style.display="block";
+         document.getElementById("frmDetails").style.display="none";
+     }
+     
+     </script>
+  
+  <style>
+      label{
+          margin-right: 75px;
+      }
+      form-control{
+          width: 10px;
+      }
+      #lblheader{
+         text-align: center;
+
+      }
+      .form-control{
+        width: 250px;
+        margin-top: -30px;
+        margin-left: 750px;
+
+      }
+      #spanInput{
+          font-size: 20px;
+          color:white;
+          margin-left:-100px;
+          margin-right: 150px
+      }
+
+    </style>
+    </head>
+
+    <body style="background-color: darkolivegreen;">
+        
+        <div container>
+          <div id="frmReg">      
+            <h1 id="lblheader"> 
+               <span class="label label-default text-light" >Hotel Registration Form!!</span>
+            </h1>
+            <!--Customer Details-->
+            <fieldset class="border" align="center" style="padding:25px">
+               <legend  class="w-auto text-info">Customer Details</legend>
+            
+                
+                <div id="spanInput">
+                    <span>Customer Name:</span>
+                    <input type="text" class="form-control"  id="txtName"><br>
+                
+                    <span>Check in Date:</span>
+                    <input type="date" class="form-control" id="txtDate" ><br>
+
+                    <span>Total no. of Days:</label>
+                    <input type="number" class="form-control" id="txtDays"><br>
+
+                    <span>Total no. of Persons:</span>
+                    <input type="number" class="form-control" id="txtPersons" >
+                </div>
+            </fieldset>
+
+             <!--Room Details-->
+            <fieldset class="border" align="center" style="padding:25px">
+                <legend class="w-auto text-info">Select Room</legend>
+                <div class="card-deck">
+                    <div class="card">
+                     <div class="card-header text-primary" align="center">
+                         <h2>Deluxe Room</h2>
+                         <p>These Deluxe Rooms let you relax as you admire a beautiful view of the pool.
+                              Stay connected as you enjoy our free WiFi and watch movies with our 32-inch
+                               LCD TV and DVD player. 
+                             Refresh yourself as you take a step into our rain shower</p>          
+                     </div>
+                        <div class="card-body">
+                            <img src="../images/Droom.jpg" class="img-thumbnail">
+                        </div>
+                        <div class="card-footer text-primary" align="center">
+                            <input class="form-control" type="radio" id="optDelux" name="room" value="Delux Room"> Delux Room
+                            &#8377; 2000/day
+                        </div>
+                    </div>
+                    <div class="card">
+                            <div class="card-header text-primary" align="center">
+                                    <h2>Suite Room</h2>
+                                    <p>Hotels offer a range of different rooms and services.
+                                         A hotel suite are larger in size and can offer a more luxurious.
+                                         A Hotel Suite give you access to additional services such as a kitchen area 
+                                         that could be useful to you depending on the reasons for your travel.
+                                                </p>          
+                                </div>
+                        <div class="card-body">
+                            <img src="../images/Sroom1.jpg" class="img-thumbnail">
+                        </div>
+                        <div class="card-header text-primary" align="center">
+                            <input class="form-control" type="radio" id="optSuite" name="room" value="Suite">Suite Room
+                            &#8377; 4400/day
+                        </div>
+                    </div>
+                </div>                
+            </fieldset>
+       <!--Aminities Details-->
+            <fieldset class="border" align="center" style="padding:25px">
+                <legend class="w-auto text-info" align="center">Select Aminities</legend>
+                            <div class="card-deck">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img src="../images/locker2.jpg" class="img-thumbnail">
+                                    </div>
+                                    <div class="card-footer text-primary" align="center">
+                                        <input class="form-control" type="checkbox" id="optLocker" value="Locker"> Locker
+                                        &#8377; 500/day
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img src="../images/ac.jpg" class="img-thumbnail">
+                                    </div>
+                                    <div class="card-footer text-primary" align="center">
+                                        <input class="form-control" type="checkbox" id="optac"  value="A/C"> A/C
+                                        &#8377; 1000/day
+                                    </div>
+                                </div>
+                            </div>                
+                </fieldset>
+
+
+            <fieldset class="border" align="center" style="padding:25px">
+                <legend class="w-auto text-info" >Advance Payment</legend>
+                    <div id="spanInput">
+                            <span>Payment Advance:</span><span style="color:red;font-size: 25px;">*</span>
+                            <input type="text" class="form-control" id="txtAdvance" required><br>
+                    </div>
+            </fieldset><br>
+
+                <div align="center">
+                    <button class="btn btn-primary" style="width: 250px;padding: 10px;" onclick="OrderClick()">Register Room</button>
+                </div>
+          </div>
+
+         <!--Booking Summary--> 
+             <div style="display: none;" id="frmDetails">
+                    <h1 id="lblheader"> 
+                            <span class="label label-default text-light" >Booking Summary!!</span>
+                    </h1>
+                 <table border="1" class="table table-hover table-info table-striped" style="width: 50%;margin-top: 1%;" align="center";>
+                    <tr>
+                        <td>Customer Name</td>
+                        <td id="tblName"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Check in Date</td>
+                        <td id="tblDate"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Total no. of Days</td>
+                        <td id="tblDays"></td>
+                          
+                    </tr>
+
+                    <tr>
+                        <td>Total no. of Persons</td>
+                        <td id="tblPersons"></td>
+                    </tr>
+    
+                    <tr>
+                        <td>Selected Room Type</td>
+                        <td id="tblDeluxSuite"></td>
+                    </tr>
+    
+                    <tr>
+                        <td>Selected Aminities</td>
+                        <td id="tbllockerAndac"></td>          
+                    </tr>
+
+                    <tr>
+                        <td>Room Amount</td>
+                        <td id="totalAmount"></td>
+                    </tr>
+        
+                    <tr>
+                        <td>Advance Paid</td>
+                        <td id="tblAdv"></td>
+                    </tr>
+        
+                    <tr>
+                        <td>Balance Amount</td>
+                        <td id="totalBalance"></td>          
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                           <button class="btn btn-danger" onclick="CloseClick()">Close</button>
+                        </td>
+                    </tr>
+                 </table>
+             </div>
+        </div>
+    </body>
+</html>

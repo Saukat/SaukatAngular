@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+          
+          function clickFun(){
+            var num=document.getElementById("txtNum").value
+           //  document.getElementById("word").innerHTML=num;
+            
+           var words = converts(num);
+           document.getElementById("word").innerHTML = words;
+
+           
+          }
+           function fun(n){
+             
+             var str="";
+            var units=["Zero","One","Two","Three","Four",
+                      "Five","Six","Seven","Eight","Nine",
+                      "Ten","Eleven","Twelve","Thirteen",
+                      "Fourteen","Fifteen","Sixteen","Seventeen",
+                      "Eghiteen","Nineteen"];
+
+            var tens=["","","Twenty","Thirty","Fourty","Fifty",
+                       "Sixty","Seventy","Eighty","Ninety"];
+
+             //code converting
+             if(n<20){
+                str=units[n];
+               }
+               else if(n>20 && n<100){
+                // tenrnd = ;
+
+                
+                str= tens[Math.floor(n/10)]+ units[n%10];
+               }
+             return str;
+          }
+        
+        function converts(num){
+          var ss="";
+          if(num<100){
+            
+            ss=fun(num);
+          }
+           return ss;
+           
+        }
+
+      
+      
+       </script>
+    </head>
+   <body class="container">
+     <input id="txtNum" type="text" />
+     <input type="submit" vlaue="submit" onclick="clickFun()">
+     <span id="word"></span>
+
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+         function bodyload()
+        {
+           document.getElementById("img").src="../images/car2.jpg";
+           document.getElementById("btnLog").value="Login";
+           document.getElementById("btnReg").value="Register";
+            }        
+        </script>
+</head>
+<body onload="bodyload()">
+    <div>
+        <img width="100" height="100" border="1" id="img">
+    </div>
+    <div>
+        <form>
+            <h2>Login</h2>
+            <input type="button" id="btnLog">
+
+        </form>
+    </div>
+    <div>
+        <form>
+            <h2>Register</h2>
+            <input type="text">
+            <input type="button" id="btnReg">
+
+        </form>
+    </div>
+</body>
+</html>

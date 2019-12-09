@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            var regExp;
+            var tip;
+           
+           function countryChange(){
+               var countryName=document.getElementById("isCountries").value;
+             //  alert(countryName);
+             var flagImg;
+                switch(countryName){
+                    case "india":
+                    tip="India Calling code +91 and 10 digits";
+                    flagImg="../RegularExpression/images/india.jpg"
+                   
+                    regExp=/\+91[0-9]{10}/;
+                     break;
+
+                   case "US":
+                    tip="US Calling code +001 and 6 digits";
+                    flagImg="../images/us.jpg";
+                    regExp=/\+001[0-9]{6}/;
+                    break;
+
+                    case "UK":
+                    tip="UK Calling code +4 and 5 digits";
+                    flagImg="../images/uk.jpg";
+                    regExp=/\+4[0-9]{5}/;
+                    break;
+                }
+                document.getElementById("txtMobile").placeholder=tip;
+                document.getElementById("flag").scr=flagImg;
+           }
+           function verifyMobile(){
+                var mobile=document.getElementById("txtMobile").value;
+               // alert(mobile);
+                var msg=document.getElementById("msg");
+                if(mobile.match(regExp)){
+                    document.write("Mobile Registered.....Confirm by SMS");
+                }else{
+                    msg.style.color="red";
+                    msg.innerHTML="Invalid mobile<br>"+tip;
+                }
+           }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <fieldset>
+                <legend>Register your Mobile
+                     <img id="flag" width="30" height="30" class="img-thumbnail">
+                     <dl>
+                         <dt>Your country</dt>
+                         <dd>
+                           <select class="form-control" id="isCountries" onchange="countryChange()">
+                             <option value="-1">Select Country</option>
+                             <option value="india">India</option>
+                             <option value="US">US</option>
+                             <option value="UK">UK</option>
+                           </select>
+                         </dd>
+                         <dt>Mobile Number:</dt>
+                         <dd>
+                             <input type="text" id="txtMobile" class="form-control">
+                         </dd>
+                     </dl>
+                     <input type="button" value="Register" class="btn btn-primary" onclick="verifyMobile()">
+
+             
+            </fieldset>
+                <h3 id="msg" align="center"></h3>
+
+        </div>
+    </body>
+</html>

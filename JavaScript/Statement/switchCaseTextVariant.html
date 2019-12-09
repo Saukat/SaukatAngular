@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+             function GetClick(){
+                var inputValue= document.getElementById("txtValue").value;
+                 var msg= document.getElementById("msg");
+                 switch(inputValue){
+                     case "n":
+                     case "N":
+                       msg.innerHTML="Select No";
+                       break;
+                     case "Y":
+                     case "y":
+                       msg.innerHTML="select Yes";
+                       break;
+                    
+                    default:
+                   
+                    msg.innerHTML="insert Y or N";
+                 }
+             }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <input type="text" id="txtValue">
+            <button onclick="GetClick()" class="btn btn-primary">Get</button>
+            <div class="text-info" id="msg">
+
+            </div>
+        </div>
+    </body>
+</html>

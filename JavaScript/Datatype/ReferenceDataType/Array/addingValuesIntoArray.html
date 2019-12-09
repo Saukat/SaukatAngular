@@ -1,0 +1,14 @@
+<script>
+function f1(){
+  var products=["TV","mobile"];
+
+  document.write("push="+products.push("shoe"));
+  document.write(products.toString());
+
+  document.write("unshift="+products.unshift("ABC"));
+  document.write(products.toString());
+
+  document.write("splice="+products.splice(1,0,"yahoo"));
+  document.write(products.toString());
+}f1();
+</script>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <script>
+            function deleteClick() {
+                console.warn("delete Click");
+                var status=confirm("Record will deleted Are you sure?");
+                  if(status==true){
+                      alert("Record Deleted..");
+                      console.error("Delete checked and confirm!!");
+                  }else{
+                       alert("Canceled");
+                       console.info("Delete Clicked but Canceled");
+                  }
+            }
+         
+         </script>
+    </head>
+    <body>
+        <input type="button" value="Delete" onclick="deleteClick()">
+    </body>
+</html>

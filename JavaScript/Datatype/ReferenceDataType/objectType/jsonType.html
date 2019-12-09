@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            var products=[
+                   {
+                       name:"Car",price:"45000000",photo:"../images/car1.jpg"
+                      
+                   },
+                   {
+                        name:"Samsung Mobile",price:"350000",photo:"../images/vivo.jpg"
+                   },
+                   {
+                         name:"Dia Decoration",price:"10000",photo:"../images/dia.jpg"
+                   }
+            ];
+
+            function getDetails(index){
+                    document.getElementById("lblName").innerHTML=products[index].name;
+                    document.getElementById("lblPrice").innerHTML="&#8377;"+products[index].price;
+                    document.getElementById("imgproduct").src=products[index].photo;
+
+            
+             }
+             function bodyload(){
+                 getDetails(0);
+             }
+
+             var count=0;
+             function nextClick(){
+                 count++;
+
+
+                 if(products.length==count){
+                     alert("Last Product");
+                 }
+                     getDetails(count);
+               
+             }
+             function prevClick(){
+                 count--;
+                 getDetails(count);
+                 if(count==0){
+                     alert("No more Product!!")
+                 }
+                
+             }
+
+        </script>
+        <style>
+        img{
+            width: 200px;
+            height: 200px;
+        }
+        </style>
+    
+    </head>
+    <body onload="bodyload()">
+        <div class="container text-center">
+             <h2 class="text-primary">Amazon Shopping</h2>
+
+             <div class="card bg-info text-danger">
+                <div class="card-header">
+                    <h3 id="lblName"></h3>
+                </div>
+
+                <div class="card-body">
+                 <input type="button" value="<" class="btn btn-secondary btn-outline-warning" onclick=" prevClick()">
+                 <img  id="imgproduct" width="200" height="200" class="img-thumbnail">
+                 <input type="button" value=">" class="btn btn-secondary btn-outline-warning" onclick=" nextClick()">
+                </div>
+
+                <div class="card-footer">
+                    <h3 id="lblPrice"></h3>
+
+                </div>
+             </div>
+        </div>
+    </body>
+</html>

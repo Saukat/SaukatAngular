@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    
+       <script>
+           var data=[
+               {UserName:"saukat"},
+               {UserName:"Rabin"},
+               {UserName:"Humayun"},
+           ];
+            function verifyText(){
+               var textValue=document.getElementById("txtField").value;
+              var msg=document.getElementById("msg");
+              for(var i=0;i<data.length;i++){
+              if(data[i].UserName==textValue){
+                  msg.innerHTML="Invalid";
+                  return;
+                  
+                }else{
+                    msg.innerHTML="valid name"+textValue;
+              }
+            }
+        }
+       </script>
+    </head>
+    <body>
+        <div class="container">
+             <div>
+                 <input type="text" class="form-control" id="txtField" onkeyup="verifyText()">
+                 <span id="msg"></span>
+             </div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+             function GetClick(){
+                var x= document.getElementById("txtValue").value;
+                 var msg= document.getElementById("msg");
+                 switch(true){
+                     
+                     case (x>=1 && x<=5):
+                       msg.innerHTML="Number between 1 to 5";
+                       break;
+                     case (x>=6 && x<=10):
+                       msg.innerHTML="Number between 6 to 10";
+                       break;
+                    
+                    default:
+                   
+                    msg.innerHTML="insert 1 to 10";
+                 }
+             }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <input type="text" id="txtValue">
+            <button onclick="GetClick()" class="btn btn-primary">Get</button>
+            <div class="text-info" id="msg">
+
+            </div>
+        </div>
+    </body>
+</html>

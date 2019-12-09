@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <script>
+        function captcha(){
+            var code;
+            var a=Math.random()*10;
+            var b=Math.random()*10;
+            var c=Math.random()*10;
+            var d=Math.random()*10;
+            var e=Math.random()*10;
+            var f=Math.random()*10;
+          
+            code=Math.round(a)+" "+Math.round(b)+"  "+Math.round(c)+" "+Math.round(d)+" "+Math.round(e)+" "+Math.round(f);
+            return code;
+        }
+        function bodyload(){
+            document.getElementById("lblCode").innerHTML=captcha();
+        }
+      </script>
+    </head>
+    <body onload="bodyload()">
+       <fieldset>
+           <legend>User Login!</legend>
+           <dl>
+               <dt>User Name!!</dt>
+               <dd><input type="text" ></dd>
+               <dt>Password!!</dt>
+               <dd><input type="password"></dd>
+               <dt>VeryfyCode</dt>
+               <dd id="lblCode"></dd>
+               <input type="button" value="Refresh" onclick="location.reload()">
+           </dl>
+       </fieldset>        
+    </body>
+</html>

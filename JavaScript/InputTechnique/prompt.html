@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+             function  createClick(){
+                 var foldername=prompt("Folder Name","new folder")
+                 var msg=document.getElementById("msg");
+                 if(foldername==null){
+                     alert("you canceled");
+                 }else{
+                     msg.innerHTML+="folder created by name::"+foldername+"<br>";
+                 }
+             }        
+        </script>
+    </head>
+<body>
+    <div>
+        <fieldset>
+            <legend>Add new folder</legend>
+            <input type="button" value="Create" onclick="createClick()" class="btn btn-success">
+            <div id="msg">
+
+            </div>
+        </fieldset>
+    </div>
+</body>
+</html>

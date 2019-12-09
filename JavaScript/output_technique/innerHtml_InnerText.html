@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+       <script>
+           function deleteClick() {
+               var status=confirm("Record will be deleted if You will confirm");
+              var msg=document.getElementById("msg");
+               if(status==true){
+                   msg.innerHTML="<font color='green'>Records deleted</font> "
+               }else{
+                   msg.innerText="Canceled";//innertext
+               }
+           }
+       </script>        
+    </head>
+<body>
+ <div class="container">
+   <div align="center">
+       <input type="button" value="Delete" class="btn btn-outline-danger" onclick="deleteClick()">
+   </div>
+   <div>
+       <h2 align="center" id="msg"></h2>
+   </div>
+ </div>
+</body>
+</html>
