@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <script>
+          var users=[
+              {userName:"john"},
+              {userName:"john123"},
+              {userName:"john_ui"},
+              {userName:"david"},
+          ];
+          function verifyName(){
+               var name=document.getElementById("txtName").value;
+             //  alert("h");
+               var msg=document.getElementById("msg");
+              msg.innerHTML=name;
+
+              for(var i=0;i<users.length;i++){
+                 // alert(users[1].userName)
+                 if(name==users[i].userName){
+                     msg.style.color="red";
+                     msg.innerHTML="matched,try another";
+                    break;
+                 }else{
+                     msg.innerHTML="unmatched";
+                 }
+              }
+  
+               
+          }
+      </script>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Register UserName</legend>
+            <input type="text" id="txtName" onkeyup="verifyName()">
+            <span id="msg"></span>
+        </fieldset>
+    </body>
+</html>

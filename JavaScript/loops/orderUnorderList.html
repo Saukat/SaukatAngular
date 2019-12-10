@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <script>
+      var products=[
+          {categogy:"electronics",items:["TV","Mobile"]},
+          {categogy:"Shoes",items:["Nike","Lee Cooper"]}
+      ];
+      function bodyLoad(){
+          var list=document.getElementById("list");
+
+          for(var i=0; i<products.length;i++){
+              var li=document.createElement("li");
+              li.innerHTML=products[i].categogy;
+              list.appendChild(li);
+          }
+      }
+     </script>
+    </head>
+    <body onload="bodyLoad()">
+     <ol id="list"> 
+
+     </ol>   
+    </body>
+</html>
